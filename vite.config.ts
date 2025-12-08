@@ -22,7 +22,16 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: undefined,
+        // Правильные расширения для модулей
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]',
       },
+    },
+    // Убеждаемся, что модули правильно обрабатываются
+    target: 'esnext',
+    modulePreload: {
+      polyfill: true,
     },
   },
 })
