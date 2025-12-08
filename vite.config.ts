@@ -9,6 +9,9 @@ export default defineConfig({
       // Разрешаем обслуживание файлов из корня проекта
       strict: false,
     },
+    hmr: {
+      protocol: 'ws',
+    },
   },
   optimizeDeps: {
     // Исключаем documents.json из предварительной оптимизации
