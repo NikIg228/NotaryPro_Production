@@ -10,15 +10,18 @@ export type StepType =
   | 'final' 
   | 'input-mode'
   | 'multiselect'
+  | 'dynamic-multi-block'
+  | 'bank-selection'
 
 export interface FieldDefinition {
   name: string
-  type: 'text' | 'number' | 'date' | 'file' | 'checkbox' | 'multiselect'
+  type: 'text' | 'number' | 'date' | 'file' | 'checkbox' | 'multiselect' | 'radio' | 'textarea' | 'select' | 'typeahead' | 'typeahead-multiselect' | 'datetime' | 'auto' | 'group' | 'checkbox-group'
   label: string
   min?: number
   max?: number
   dictionary?: string
   show_if?: string
+  options?: RadioOption[] | string[] | number[]
 }
 
 export interface ManualField extends FieldDefinition {
@@ -52,6 +55,10 @@ export interface StepDefinition {
   options?: RadioOption[] | CheckboxOption[]
   optionsFrom?: string
   select_all?: boolean
+  blocks?: { [key: string]: FieldDefinition[] }
+  bank_card_template?: {
+    fields: FieldDefinition[]
+  }
   validation?: {
     min?: number
     max?: number

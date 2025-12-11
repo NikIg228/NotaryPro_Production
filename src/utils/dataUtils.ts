@@ -75,24 +75,24 @@ export const getDocumentMainCategory = (doc: Document): string => {
     return 'Наследственное дело'
   }
   
+  // Заявление - проверяем перед доверенностью, чтобы "Заявление об отмене доверенности" попало в Заявление
+  if (title.includes('заявление')) {
+    return 'Заявление'
+  }
+  
   // Договор
   if (title.includes('договор') || title.includes('брачное соглашение')) {
     return 'Договор'
   }
   
-  // Доверенность
-  if (title.includes('доверенность') || category.includes('доверенности')) {
-    return 'Доверенность'
-  }
-  
-  // Согласие
-  if (title.includes('согласие')) {
+  // Согласие - проверяем соглашение и согласие
+  if (title.includes('согласие') || title.includes('соглашение')) {
     return 'Согласие'
   }
   
-  // Заявление
-  if (title.includes('заявление')) {
-    return 'Заявление'
+  // Доверенность
+  if (title.includes('доверенность') || category.includes('доверенности')) {
+    return 'Доверенность'
   }
   
   // По умолчанию - Доверенность (так как большинство документов - доверенности)

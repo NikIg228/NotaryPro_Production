@@ -8,11 +8,31 @@ interface RadioGroupProps {
 }
 
 const RadioGroup: React.FC<RadioGroupProps> = ({ step, value, onChange }) => {
+  const getOptionLabel = (option: any): string => {
+    if (typeof option === 'object' && option.label) {
+      return option.label
+    }
+    const strValue = String(option)
+    // Переводы для yes/no
+    if (strValue.toLowerCase() === 'yes') return 'Да'
+    if (strValue.toLowerCase() === 'no') return 'Нет'
+    // Переводы для других значений
+    if (strValue === 'until_divorce') return 'До развода'
+    if (strValue === 'forever') return 'Бессрочно'
+    if (strValue === 'until_date') return 'До указанной даты'
+    if (strValue === 'prenup') return 'Ещё не в браке (пренуп)'
+    if (strValue === 'in_marriage') return 'В браке (составляется в браке)'
+    if (strValue === 'divorce') return 'После развода (соглашение о разделе)'
+    if (strValue === 'personal') return 'Лично'
+    if (strValue === 'poa') return 'По доверенности'
+    return strValue
+  }
+
   return (
     <div className="space-y-4">
       {step.options?.map((option, index) => {
         const optionValue = typeof option === 'object' ? option.value : option
-        const optionLabel = typeof option === 'object' ? option.label : String(option)
+        const optionLabel = getOptionLabel(option)
         const isChecked = value === optionValue
         
         return (

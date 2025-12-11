@@ -16,9 +16,15 @@ const Header: React.FC = () => {
           <nav className="flex items-center gap-4">
             <Link 
               to="/landing" 
-              className="text-gray-700 hover:text-purple-600 transition-colors"
+              className="text-gray-700 hover:text-gray-900 transition-colors"
             >
               Landing
+            </Link>
+            <Link 
+              to="/profile" 
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              Личный кабинет
             </Link>
           </nav>
         </div>

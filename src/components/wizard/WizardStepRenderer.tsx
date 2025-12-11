@@ -269,6 +269,55 @@ const WizardStepRenderer: React.FC<WizardStepRendererProps> = ({
           </div>
         )
 
+      case 'dynamic-multi-block':
+        if (!step.blocks) {
+          return (
+            <div className="text-gray-600">
+              Блоки не определены для шага "{step.id}"
+            </div>
+          )
+        }
+
+        // Маппинг названий блоков на читаемые заголовки
+        const blockTitles: { [key: string]: string } = {
+          'personal_data': 'Персональные данные',
+          'docs_issue': 'Выдача документов',
+          'admin_actions': 'Административные действия',
+          'events_children': 'Мероприятия для детей',
+          'legal_actions': 'Юридические действия',
+          'access_info': 'Доступ к информации',
+          'use_property': 'Использование имущества',
+          'child_actions': 'Действия с детьми',
+          'custom': 'Иное'
+        }
+
+        return (
+          <div className="space-y-6">
+            {Object.entries(step.blocks).map(([blockKey, blockFields]) => {
+              const blockTitle = blockTitles[blockKey] || blockKey.split('_').map(word => 
+                word.charAt(0).toUpperCase() + word.slice(1)
+              ).join(' ')
+              
+              return (
+                <div key={blockKey} className="space-y-3">
+                  <h3 className="text-base font-semibold text-gray-900 pb-2">
+                    {blockTitle}
+                  </h3>
+                  <div className="space-y-3 pl-2">
+                    {blockFields.map((field, index) => (
+                      <FormFieldRenderer
+                        key={`${blockKey}-${index}`}
+                        field={field}
+                        formData={watchedValues}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        )
+
       case 'final':
         return (
           <div className="text-center py-8">
@@ -290,11 +339,34 @@ const WizardStepRenderer: React.FC<WizardStepRendererProps> = ({
     }
   }
 
+  // Функция для перевода id шагов на русский
+  const getStepTitle = (): string => {
+    if (step.title) return step.title
+    if (step.label) return step.label
+    
+    // Переводы для английских id
+    const idTranslations: { [key: string]: string } = {
+      'term_days': 'Количество дней',
+      'term_months': 'Количество месяцев',
+      'principal': 'Доверитель',
+      'agent_1': 'Поверенный',
+      'agent1': 'Поверенный',
+      'agent_2': 'Поверенный 2',
+      'agent2': 'Поверенный 2',
+      'banks': 'Выбор банков',
+      'term': 'Срок доверенности',
+      'validate': 'Проверка данных',
+      'generate': 'Генерация документа'
+    }
+    
+    return idTranslations[step.id] || step.id
+  }
+
   return (
     <Card hover={false}>
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-gray-900 mb-2">
-          {step.title || step.label || step.id}
+          {getStepTitle()}
         </h2>
         {step.item_label && (
           <p className="text-sm text-gray-600">

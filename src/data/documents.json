@@ -849,31 +849,12 @@
           "next": "agent_choice"
         },
         {
-          "id": "agent_choice",
-          "type": "radio",
-          "title": "Количество поверенных",
-          "options": [
-            {
-              "value": 1,
-              "label": "1 поверенный"
-            },
-            {
-              "value": 2,
-              "label": "2 поверенных"
-            }
-          ],
-          "next": {
-            "1": "agent1",
-            "2": "agent_multi"
-          }
-        },
-        {
           "id": "agent1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
               "name": "agents[0].full_name",
@@ -912,57 +893,6 @@
             },
             {
               "name": "agents[0].phone",
-              "type": "text",
-              "label": "Телефон (опц.)"
-            }
-          ],
-          "next": "where_block"
-        },
-        {
-          "id": "agent_multi",
-          "type": "input-mode",
-          "title": "Поверенные",
-          "input_mode_field": "agent_multi_mode",
-          "min": 2,
-          "max": 2,
-          "manual_fields": [
-            {
-              "name": "agents[].full_name",
-              "type": "text",
-              "label": "ФИО"
-            },
-            {
-              "name": "agents[].iin",
-              "type": "text",
-              "label": "ИИН"
-            },
-            {
-              "name": "agents[].address",
-              "type": "text",
-              "label": "Адрес"
-            },
-            {
-              "name": "agents[].document.type",
-              "type": "text",
-              "label": "Тип документа"
-            },
-            {
-              "name": "agents[].document.number",
-              "type": "text",
-              "label": "Серия/номер"
-            },
-            {
-              "name": "agents[].document.issued_by",
-              "type": "text",
-              "label": "Кем выдан"
-            },
-            {
-              "name": "agents[].document.issued_date",
-              "type": "date",
-              "label": "Дата выдачи"
-            },
-            {
-              "name": "agents[].phone",
               "type": "text",
               "label": "Телефон (опц.)"
             }
@@ -1191,31 +1121,12 @@
           "next": "agent_choice"
         },
         {
-          "id": "agent_choice",
-          "type": "radio",
-          "title": "Количество поверенных",
-          "options": [
-            {
-              "value": 1,
-              "label": "1 поверенный"
-            },
-            {
-              "value": 2,
-              "label": "2 поверенных"
-            }
-          ],
-          "next": {
-            "1": "agent1",
-            "2": "agents_multi"
-          }
-        },
-        {
           "id": "agent1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
               "name": "agents[0].full_name",
@@ -1254,57 +1165,6 @@
             },
             {
               "name": "agents[0].phone",
-              "type": "text",
-              "label": "Телефон (опц.)"
-            }
-          ],
-          "next": "vehicle"
-        },
-        {
-          "id": "agents_multi",
-          "type": "input-mode",
-          "title": "Поверенные",
-          "input_mode_field": "agents_multi_mode",
-          "min": 2,
-          "max": 2,
-          "manual_fields": [
-            {
-              "name": "agents[].full_name",
-              "type": "text",
-              "label": "ФИО"
-            },
-            {
-              "name": "agents[].iin",
-              "type": "text",
-              "label": "ИИН (если есть)"
-            },
-            {
-              "name": "agents[].document.type",
-              "type": "text",
-              "label": "Тип документа"
-            },
-            {
-              "name": "agents[].document.number",
-              "type": "text",
-              "label": "Серия/номер"
-            },
-            {
-              "name": "agents[].document.issued_by",
-              "type": "text",
-              "label": "Кем выдан"
-            },
-            {
-              "name": "agents[].document.issued_date",
-              "type": "date",
-              "label": "Дата выдачи"
-            },
-            {
-              "name": "agents[].address",
-              "type": "text",
-              "label": "Адрес"
-            },
-            {
-              "name": "agents[].phone",
               "type": "text",
               "label": "Телефон (опц.)"
             }
@@ -1586,31 +1446,12 @@
           "next": "agent_choice"
         },
         {
-          "id": "agent_choice",
-          "type": "radio",
-          "title": "Поверенный: количество",
-          "options": [
-            {
-              "value": 1,
-              "label": "1 поверенный"
-            },
-            {
-              "value": 2,
-              "label": "2 поверенных"
-            }
-          ],
-          "next": {
-            "1": "agent1",
-            "2": "agents_multi"
-          }
-        },
-        {
           "id": "agent1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
               "name": "agents[0].full_name",
@@ -2449,119 +2290,45 @@
           "next": "agent_choice"
         },
         {
-          "id": "agent_choice",
-          "type": "radio",
-          "title": "Количество поверенных",
-          "options": [
-            {
-              "value": "1",
-              "label": "1 поверенный"
-            },
-            {
-              "value": "2",
-              "label": "2 поверенных"
-            }
-          ],
-          "next": {
-            "1": "agent_1",
-            "2": "agent_1"
-          }
-        },
-        {
           "id": "agent_1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent_1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
-              "name": "agent1.full_name",
+              "name": "agent[].full_name",
               "type": "text",
               "label": "ФИО"
             },
             {
-              "name": "agent1.iin",
+              "name": "agent[].iin",
               "type": "text",
               "label": "ИИН"
             },
             {
-              "name": "agent1.address",
+              "name": "agent[].address",
               "type": "text",
               "label": "Адрес"
             },
             {
-              "name": "agent1.document.type",
+              "name": "agent[].document.type",
               "type": "text",
               "label": "Тип документа"
             },
             {
-              "name": "agent1.document.number",
+              "name": "agent[].document.number",
               "type": "text",
               "label": "Серия / номер"
             },
             {
-              "name": "agent1.document.issued_by",
+              "name": "agent[].document.issued_by",
               "type": "text",
               "label": "Кем выдан"
             },
             {
-              "name": "agent1.document.issued_date",
-              "type": "date",
-              "label": "Дата выдачи"
-            }
-          ],
-          "next": {
-            "default": "agent_2_or_next"
-          }
-        },
-        {
-          "id": "agent_2_or_next",
-          "type": "condition",
-          "expression": "agent_choice == '2'",
-          "next_if_true": "agent_2",
-          "next_if_false": "term"
-        },
-        {
-          "id": "agent_2",
-          "type": "input-mode",
-          "title": "Поверенный 2",
-          "input_mode_field": "agent_2_mode",
-          "min": 1,
-          "max": 1,
-          "manual_fields": [
-            {
-              "name": "agent2.full_name",
-              "type": "text",
-              "label": "ФИО"
-            },
-            {
-              "name": "agent2.iin",
-              "type": "text",
-              "label": "ИИН"
-            },
-            {
-              "name": "agent2.address",
-              "type": "text",
-              "label": "Адрес"
-            },
-            {
-              "name": "agent2.document.type",
-              "type": "text",
-              "label": "Тип документа"
-            },
-            {
-              "name": "agent2.document.number",
-              "type": "text",
-              "label": "Серия / номер"
-            },
-            {
-              "name": "agent2.document.issued_by",
-              "type": "text",
-              "label": "Кем выдан"
-            },
-            {
-              "name": "agent2.document.issued_date",
+              "name": "agent[].document.issued_date",
               "type": "date",
               "label": "Дата выдачи"
             }
@@ -2876,117 +2643,45 @@
           "next": "agent_choice"
         },
         {
-          "id": "agent_choice",
-          "type": "radio",
-          "title": "Количество поверенных",
-          "options": [
-            {
-              "value": "1",
-              "label": "1 поверенный"
-            },
-            {
-              "value": "2",
-              "label": "2 поверенных"
-            }
-          ],
-          "next": {
-            "1": "agent1",
-            "2": "agent1"
-          }
-        },
-        {
           "id": "agent1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
-              "name": "agent1.full_name",
+              "name": "agent[].full_name",
               "type": "text",
               "label": "ФИО"
             },
             {
-              "name": "agent1.iin",
+              "name": "agent[].iin",
               "type": "text",
               "label": "ИИН"
             },
             {
-              "name": "agent1.address",
+              "name": "agent[].address",
               "type": "text",
               "label": "Адрес"
             },
             {
-              "name": "agent1.document.type",
+              "name": "agent[].document.type",
               "type": "text",
               "label": "Тип документа"
             },
             {
-              "name": "agent1.document.number",
+              "name": "agent[].document.number",
               "type": "text",
               "label": "Серия / номер"
             },
             {
-              "name": "agent1.document.issued_by",
+              "name": "agent[].document.issued_by",
               "type": "text",
               "label": "Кем выдан"
             },
             {
-              "name": "agent1.document.issued_date",
-              "type": "date",
-              "label": "Дата выдачи"
-            }
-          ],
-          "next": "agent2_or_categories"
-        },
-        {
-          "id": "agent2_or_categories",
-          "type": "condition",
-          "expression": "agent_choice == '2'",
-          "next_if_true": "agent2",
-          "next_if_false": "benefit_categories"
-        },
-        {
-          "id": "agent2",
-          "type": "input-mode",
-          "title": "Поверенный 2",
-          "input_mode_field": "agent2_mode",
-          "min": 1,
-          "max": 1,
-          "manual_fields": [
-            {
-              "name": "agent2.full_name",
-              "type": "text",
-              "label": "ФИО"
-            },
-            {
-              "name": "agent2.iin",
-              "type": "text",
-              "label": "ИИН"
-            },
-            {
-              "name": "agent2.address",
-              "type": "text",
-              "label": "Адрес"
-            },
-            {
-              "name": "agent2.document.type",
-              "type": "text",
-              "label": "Тип документа"
-            },
-            {
-              "name": "agent2.document.number",
-              "type": "text",
-              "label": "Серия / номер"
-            },
-            {
-              "name": "agent2.document.issued_by",
-              "type": "text",
-              "label": "Кем выдан"
-            },
-            {
-              "name": "agent2.document.issued_date",
+              "name": "agent[].document.issued_date",
               "type": "date",
               "label": "Дата выдачи"
             }
@@ -3432,127 +3127,50 @@
           "next": "agent_choice"
         },
         {
-          "id": "agent_choice",
-          "type": "radio",
-          "title": "Количество поверенных",
-          "options": [
-            {
-              "value": "1",
-              "label": "1 поверенный"
-            },
-            {
-              "value": "2",
-              "label": "2 поверенных"
-            }
-          ],
-          "next": {
-            "1": "agent1",
-            "2": "agent1"
-          }
-        },
-        {
           "id": "agent1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
-              "name": "agent1.full_name",
+              "name": "agent[].full_name",
               "type": "text",
               "label": "ФИО"
             },
             {
-              "name": "agent1.iin",
+              "name": "agent[].iin",
               "type": "text",
               "label": "ИИН"
             },
             {
-              "name": "agent1.document.type",
+              "name": "agent[].document.type",
               "type": "text",
               "label": "Тип документа"
             },
             {
-              "name": "agent1.document.number",
+              "name": "agent[].document.number",
               "type": "text",
               "label": "Серия/номер"
             },
             {
-              "name": "agent1.document.issued_by",
+              "name": "agent[].document.issued_by",
               "type": "text",
               "label": "Кем выдан"
             },
             {
-              "name": "agent1.document.issued_date",
+              "name": "agent[].document.issued_date",
               "type": "date",
               "label": "Дата выдачи"
             },
             {
-              "name": "agent1.address",
+              "name": "agent[].address",
               "type": "text",
               "label": "Адрес"
             },
             {
-              "name": "agent1.contact",
-              "type": "text",
-              "label": "Контакт"
-            }
-          ],
-          "next": "agent2_cond"
-        },
-        {
-          "id": "agent2_cond",
-          "type": "condition",
-          "expression": "agent_choice == '2'",
-          "next_if_true": "agent2",
-          "next_if_false": "court_types"
-        },
-        {
-          "id": "agent2",
-          "type": "input-mode",
-          "title": "Поверенный 2",
-          "input_mode_field": "agent2_mode",
-          "min": 1,
-          "max": 1,
-          "manual_fields": [
-            {
-              "name": "agent2.full_name",
-              "type": "text",
-              "label": "ФИО"
-            },
-            {
-              "name": "agent2.iin",
-              "type": "text",
-              "label": "ИИН"
-            },
-            {
-              "name": "agent2.document.type",
-              "type": "text",
-              "label": "Тип документа"
-            },
-            {
-              "name": "agent2.document.number",
-              "type": "text",
-              "label": "Серия/номер"
-            },
-            {
-              "name": "agent2.document.issued_by",
-              "type": "text",
-              "label": "Кем выдан"
-            },
-            {
-              "name": "agent2.document.issued_date",
-              "type": "date",
-              "label": "Дата выдачи"
-            },
-            {
-              "name": "agent2.address",
-              "type": "text",
-              "label": "Адрес"
-            },
-            {
-              "name": "agent2.contact",
+              "name": "agent[].contact",
               "type": "text",
               "label": "Контакт"
             }
@@ -3984,128 +3602,50 @@
           "next": "agent_choice"
         },
         {
-          "id": "agent_choice",
-          "type": "radio",
-          "title": "Количество поверенных",
-          "options": [
-            {
-              "value": "1",
-              "label": "1 поверенный"
-            },
-            {
-              "value": "2",
-              "label": "2 поверенных"
-            }
-          ],
-          "required": true,
-          "next": {
-            "1": "agent1",
-            "2": "agent1"
-          }
-        },
-        {
           "id": "agent1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
-              "name": "agent1.full_name",
+              "name": "agent[].full_name",
               "type": "text",
               "label": "ФИО"
             },
             {
-              "name": "agent1.iin",
+              "name": "agent[].iin",
               "type": "text",
               "label": "ИИН"
             },
             {
-              "name": "agent1.address",
+              "name": "agent[].address",
               "type": "text",
               "label": "Адрес"
             },
             {
-              "name": "agent1.document.type",
+              "name": "agent[].document.type",
               "type": "text",
               "label": "Документ: тип"
             },
             {
-              "name": "agent1.document.number",
+              "name": "agent[].document.number",
               "type": "text",
               "label": "Серия / номер"
             },
             {
-              "name": "agent1.document.issued_by",
+              "name": "agent[].document.issued_by",
               "type": "text",
               "label": "Кем выдан"
             },
             {
-              "name": "agent1.document.issued_date",
+              "name": "agent[].document.issued_date",
               "type": "date",
               "label": "Дата выдачи"
             },
             {
-              "name": "agent1.contact",
-              "type": "text",
-              "label": "Контакт"
-            }
-          ],
-          "next": "agent2_cond"
-        },
-        {
-          "id": "agent2_cond",
-          "type": "condition",
-          "expression": "agent_choice == '2'",
-          "next_if_true": "agent2",
-          "next_if_false": "banks"
-        },
-        {
-          "id": "agent2",
-          "type": "input-mode",
-          "title": "Поверенный 2",
-          "input_mode_field": "agent2_mode",
-          "min": 1,
-          "max": 1,
-          "manual_fields": [
-            {
-              "name": "agent2.full_name",
-              "type": "text",
-              "label": "ФИО"
-            },
-            {
-              "name": "agent2.iin",
-              "type": "text",
-              "label": "ИИН"
-            },
-            {
-              "name": "agent2.address",
-              "type": "text",
-              "label": "Адрес"
-            },
-            {
-              "name": "agent2.document.type",
-              "type": "text",
-              "label": "Документ: тип"
-            },
-            {
-              "name": "agent2.document.number",
-              "type": "text",
-              "label": "Серия / номер"
-            },
-            {
-              "name": "agent2.document.issued_by",
-              "type": "text",
-              "label": "Кем выдан"
-            },
-            {
-              "name": "agent2.document.issued_date",
-              "type": "date",
-              "label": "Дата выдачи"
-            },
-            {
-              "name": "agent2.contact",
+              "name": "agent[].contact",
               "type": "text",
               "label": "Контакт"
             }
@@ -4480,128 +4020,50 @@
           "next": "agent_choice"
         },
         {
-          "id": "agent_choice",
-          "type": "radio",
-          "title": "Количество поверенных",
-          "options": [
-            {
-              "value": "1",
-              "label": "1 поверенный"
-            },
-            {
-              "value": "2",
-              "label": "2 поверенных"
-            }
-          ],
-          "required": true,
-          "next": {
-            "1": "agent1",
-            "2": "agent1"
-          }
-        },
-        {
           "id": "agent1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
-              "name": "agent1.full_name",
+              "name": "agent[].full_name",
               "type": "text",
               "label": "ФИО"
             },
             {
-              "name": "agent1.iin",
+              "name": "agent[].iin",
               "type": "text",
               "label": "ИИН"
             },
             {
-              "name": "agent1.address",
+              "name": "agent[].address",
               "type": "text",
               "label": "Адрес"
             },
             {
-              "name": "agent1.document.type",
+              "name": "agent[].document.type",
               "type": "text",
               "label": "Документ: тип"
             },
             {
-              "name": "agent1.document.number",
+              "name": "agent[].document.number",
               "type": "text",
               "label": "Серия / номер"
             },
             {
-              "name": "agent1.document.issued_by",
+              "name": "agent[].document.issued_by",
               "type": "text",
               "label": "Кем выдан"
             },
             {
-              "name": "agent1.document.issued_date",
+              "name": "agent[].document.issued_date",
               "type": "date",
               "label": "Дата выдачи"
             },
             {
-              "name": "agent1.contact",
-              "type": "text",
-              "label": "Контакт"
-            }
-          ],
-          "next": "agent2_cond"
-        },
-        {
-          "id": "agent2_cond",
-          "type": "condition",
-          "expression": "agent_choice == '2'",
-          "next_if_true": "agent2",
-          "next_if_false": "scope"
-        },
-        {
-          "id": "agent2",
-          "type": "input-mode",
-          "title": "Поверенный 2",
-          "input_mode_field": "agent2_mode",
-          "min": 1,
-          "max": 1,
-          "manual_fields": [
-            {
-              "name": "agent2.full_name",
-              "type": "text",
-              "label": "ФИО"
-            },
-            {
-              "name": "agent2.iin",
-              "type": "text",
-              "label": "ИИН"
-            },
-            {
-              "name": "agent2.address",
-              "type": "text",
-              "label": "Адрес"
-            },
-            {
-              "name": "agent2.document.type",
-              "type": "text",
-              "label": "Документ: тип"
-            },
-            {
-              "name": "agent2.document.number",
-              "type": "text",
-              "label": "Серия / номер"
-            },
-            {
-              "name": "agent2.document.issued_by",
-              "type": "text",
-              "label": "Кем выдан"
-            },
-            {
-              "name": "agent2.document.issued_date",
-              "type": "date",
-              "label": "Дата выдачи"
-            },
-            {
-              "name": "agent2.contact",
+              "name": "agent[].contact",
               "type": "text",
               "label": "Контакт"
             }
@@ -7054,128 +6516,50 @@
           "next": "agent_choice"
         },
         {
-          "id": "agent_choice",
-          "type": "radio",
-          "title": "Количество поверенных",
-          "options": [
-            {
-              "value": "1",
-              "label": "1 поверенный"
-            },
-            {
-              "value": "2",
-              "label": "2 поверенных"
-            }
-          ],
-          "required": true,
-          "next": {
-            "1": "agent1",
-            "2": "agent1"
-          }
-        },
-        {
           "id": "agent1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
-              "name": "agent1.full_name",
+              "name": "agent[].full_name",
               "type": "text",
               "label": "ФИО"
             },
             {
-              "name": "agent1.iin",
+              "name": "agent[].iin",
               "type": "text",
               "label": "ИИН"
             },
             {
-              "name": "agent1.address",
+              "name": "agent[].address",
               "type": "text",
               "label": "Адрес"
             },
             {
-              "name": "agent1.document.type",
+              "name": "agent[].document.type",
               "type": "text",
               "label": "Документ: тип"
             },
             {
-              "name": "agent1.document.number",
+              "name": "agent[].document.number",
               "type": "text",
               "label": "Серия/номер"
             },
             {
-              "name": "agent1.document.issued_by",
+              "name": "agent[].document.issued_by",
               "type": "text",
               "label": "Кем выдан"
             },
             {
-              "name": "agent1.document.issued_date",
+              "name": "agent[].document.issued_date",
               "type": "date",
               "label": "Дата выдачи"
             },
             {
-              "name": "agent1.contact",
-              "type": "text",
-              "label": "Контакт"
-            }
-          ],
-          "next": "agent2_cond"
-        },
-        {
-          "id": "agent2_cond",
-          "type": "condition",
-          "expression": "agent_choice == '2'",
-          "next_if_true": "agent2",
-          "next_if_false": "association"
-        },
-        {
-          "id": "agent2",
-          "type": "input-mode",
-          "title": "Поверенный 2",
-          "input_mode_field": "agent2_mode",
-          "min": 1,
-          "max": 1,
-          "manual_fields": [
-            {
-              "name": "agent2.full_name",
-              "type": "text",
-              "label": "ФИО"
-            },
-            {
-              "name": "agent2.iin",
-              "type": "text",
-              "label": "ИИН"
-            },
-            {
-              "name": "agent2.address",
-              "type": "text",
-              "label": "Адрес"
-            },
-            {
-              "name": "agent2.document.type",
-              "type": "text",
-              "label": "Документ: тип"
-            },
-            {
-              "name": "agent2.document.number",
-              "type": "text",
-              "label": "Серия/номер"
-            },
-            {
-              "name": "agent2.document.issued_by",
-              "type": "text",
-              "label": "Кем выдан"
-            },
-            {
-              "name": "agent2.document.issued_date",
-              "type": "date",
-              "label": "Дата выдачи"
-            },
-            {
-              "name": "agent2.contact",
+              "name": "agent[].contact",
               "type": "text",
               "label": "Контакт"
             }
@@ -7681,128 +7065,50 @@
           "next": "agent_choice"
         },
         {
-          "id": "agent_choice",
-          "type": "radio",
-          "title": "Количество поверенных",
-          "options": [
-            {
-              "value": "1",
-              "label": "1 поверенный"
-            },
-            {
-              "value": "2",
-              "label": "2 поверенных"
-            }
-          ],
-          "required": true,
-          "next": {
-            "1": "agent1",
-            "2": "agent1"
-          }
-        },
-        {
           "id": "agent1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
-              "name": "agent1.full_name",
+              "name": "agent[].full_name",
               "type": "text",
               "label": "ФИО"
             },
             {
-              "name": "agent1.iin",
+              "name": "agent[].iin",
               "type": "text",
               "label": "ИИН"
             },
             {
-              "name": "agent1.address",
+              "name": "agent[].address",
               "type": "text",
               "label": "Адрес"
             },
             {
-              "name": "agent1.document.type",
+              "name": "agent[].document.type",
               "type": "text",
               "label": "Документ: тип"
             },
             {
-              "name": "agent1.document.number",
+              "name": "agent[].document.number",
               "type": "text",
               "label": "Серия/номер"
             },
             {
-              "name": "agent1.document.issued_by",
+              "name": "agent[].document.issued_by",
               "type": "text",
               "label": "Кем выдан"
             },
             {
-              "name": "agent1.document.issued_date",
+              "name": "agent[].document.issued_date",
               "type": "date",
               "label": "Дата выдачи"
             },
             {
-              "name": "agent1.contact",
-              "type": "text",
-              "label": "Контакт"
-            }
-          ],
-          "next": "agent2_cond"
-        },
-        {
-          "id": "agent2_cond",
-          "type": "condition",
-          "expression": "agent_choice == '2'",
-          "next_if_true": "agent2",
-          "next_if_false": "property"
-        },
-        {
-          "id": "agent2",
-          "type": "input-mode",
-          "title": "Поверенный 2",
-          "input_mode_field": "agent2_mode",
-          "min": 1,
-          "max": 1,
-          "manual_fields": [
-            {
-              "name": "agent2.full_name",
-              "type": "text",
-              "label": "ФИО"
-            },
-            {
-              "name": "agent2.iin",
-              "type": "text",
-              "label": "ИИН"
-            },
-            {
-              "name": "agent2.address",
-              "type": "text",
-              "label": "Адрес"
-            },
-            {
-              "name": "agent2.document.type",
-              "type": "text",
-              "label": "Документ: тип"
-            },
-            {
-              "name": "agent2.document.number",
-              "type": "text",
-              "label": "Серия/номер"
-            },
-            {
-              "name": "agent2.document.issued_by",
-              "type": "text",
-              "label": "Кем выдан"
-            },
-            {
-              "name": "agent2.document.issued_date",
-              "type": "date",
-              "label": "Дата выдачи"
-            },
-            {
-              "name": "agent2.contact",
+              "name": "agent[].contact",
               "type": "text",
               "label": "Контакт"
             }
@@ -14627,118 +13933,45 @@
           "next": "agent_choice"
         },
         {
-          "id": "agent_choice",
-          "type": "radio",
-          "title": "Количество поверенных",
-          "options": [
-            {
-              "value": "1",
-              "label": "1 поверенный"
-            },
-            {
-              "value": "2",
-              "label": "2 поверенных"
-            }
-          ],
-          "required": true,
-          "next": {
-            "1": "agent1",
-            "2": "agent1"
-          }
-        },
-        {
           "id": "agent1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
-              "name": "agent1.full_name",
+              "name": "agent[].full_name",
               "type": "text",
               "label": "ФИО"
             },
             {
-              "name": "agent1.iin",
+              "name": "agent[].iin",
               "type": "text",
               "label": "ИИН"
             },
             {
-              "name": "agent1.address",
+              "name": "agent[].address",
               "type": "text",
               "label": "Адрес"
             },
             {
-              "name": "agent1.passport.type",
+              "name": "agent[].passport.type",
               "type": "text",
               "label": "Документ: тип"
             },
             {
-              "name": "agent1.passport.number",
+              "name": "agent[].passport.number",
               "type": "text",
               "label": "Серия / номер"
             },
             {
-              "name": "agent1.passport.issued_by",
+              "name": "agent[].passport.issued_by",
               "type": "text",
               "label": "Кем выдан"
             },
             {
-              "name": "agent1.passport.issued_date",
-              "type": "date",
-              "label": "Дата выдачи"
-            }
-          ],
-          "next": "agent2_cond"
-        },
-        {
-          "id": "agent2_cond",
-          "type": "condition",
-          "expression": "agent_choice == '2'",
-          "next_if_true": "agent2",
-          "next_if_false": "task_selection"
-        },
-        {
-          "id": "agent2",
-          "type": "input-mode",
-          "title": "Поверенный 2",
-          "input_mode_field": "agent2_mode",
-          "min": 1,
-          "max": 1,
-          "manual_fields": [
-            {
-              "name": "agent2.full_name",
-              "type": "text",
-              "label": "ФИО"
-            },
-            {
-              "name": "agent2.iin",
-              "type": "text",
-              "label": "ИИН"
-            },
-            {
-              "name": "agent2.address",
-              "type": "text",
-              "label": "Адрес"
-            },
-            {
-              "name": "agent2.passport.type",
-              "type": "text",
-              "label": "Документ: тип"
-            },
-            {
-              "name": "agent2.passport.number",
-              "type": "text",
-              "label": "Серия / номер"
-            },
-            {
-              "name": "agent2.passport.issued_by",
-              "type": "text",
-              "label": "Кем выдан"
-            },
-            {
-              "name": "agent2.passport.issued_date",
+              "name": "agent[].passport.issued_date",
               "type": "date",
               "label": "Дата выдачи"
             }
@@ -16795,60 +16028,40 @@
           "next": "agent_count"
         },
         {
-          "id": "agent_count",
-          "type": "radio",
-          "title": "Количество поверенных",
-          "options": [
-            {
-              "value": "1",
-              "label": "1 поверенный"
-            },
-            {
-              "value": "2",
-              "label": "2 поверенных"
-            }
-          ],
-          "required": true,
-          "next": {
-            "1": "agent_1",
-            "2": "agent_1"
-          }
-        },
-        {
           "id": "agent_1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent_1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
-              "name": "agent1.full_name",
+              "name": "agent[].full_name",
               "type": "text",
               "label": "ФИО"
             },
             {
-              "name": "agent1.iin",
+              "name": "agent[].iin",
               "type": "text",
               "label": "ИИН"
             },
             {
-              "name": "agent1.passport.number",
+              "name": "agent[].passport.number",
               "type": "text",
               "label": "Паспорт"
             },
             {
-              "name": "agent1.address",
+              "name": "agent[].address",
               "type": "text",
               "label": "Адрес"
             },
             {
-              "name": "agent1.phone",
+              "name": "agent[].phone",
               "type": "text",
               "label": "Телефон"
             }
           ],
-          "next": "agent_2_cond"
+          "next": "mail_types"
         },
         {
           "id": "agent_2_cond",
@@ -16856,42 +16069,6 @@
           "expression": "agent_count == '2'",
           "next_if_true": "agent_2",
           "next_if_false": "mail_types"
-        },
-        {
-          "id": "agent_2",
-          "type": "input-mode",
-          "title": "Поверенный 2",
-          "input_mode_field": "agent_2_mode",
-          "min": 1,
-          "max": 1,
-          "manual_fields": [
-            {
-              "name": "agent2.full_name",
-              "type": "text",
-              "label": "ФИО"
-            },
-            {
-              "name": "agent2.iin",
-              "type": "text",
-              "label": "ИИН"
-            },
-            {
-              "name": "agent2.passport.number",
-              "type": "text",
-              "label": "Паспорт"
-            },
-            {
-              "name": "agent2.address",
-              "type": "text",
-              "label": "Адрес"
-            },
-            {
-              "name": "agent2.phone",
-              "type": "text",
-              "label": "Телефон"
-            }
-          ],
-          "next": "mail_types"
         },
         {
           "id": "mail_types",
@@ -17243,55 +16420,35 @@
           "next": "agent_count"
         },
         {
-          "id": "agent_count",
-          "type": "radio",
-          "title": "Количество поверенных",
-          "options": [
-            {
-              "value": "1",
-              "label": "1 поверенный"
-            },
-            {
-              "value": "2",
-              "label": "2 поверенных"
-            }
-          ],
-          "required": true,
-          "next": {
-            "1": "agent1",
-            "2": "agent1"
-          }
-        },
-        {
           "id": "agent1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
-              "name": "agent1.full_name",
+              "name": "agent[].full_name",
               "type": "text",
               "label": "ФИО"
             },
             {
-              "name": "agent1.iin",
+              "name": "agent[].iin",
               "type": "text",
               "label": "ИИН"
             },
             {
-              "name": "agent1.passport",
+              "name": "agent[].passport",
               "type": "text",
               "label": "Документ личности"
             },
             {
-              "name": "agent1.contacts.phone",
+              "name": "agent[].contacts.phone",
               "type": "text",
               "label": "Телефон"
             }
           ],
-          "next": "agent2_cond"
+          "next": "payment_types"
         },
         {
           "id": "agent2_cond",
@@ -17299,37 +16456,6 @@
           "expression": "agent_count == '2'",
           "next_if_true": "agent2",
           "next_if_false": "payment_types"
-        },
-        {
-          "id": "agent2",
-          "type": "input-mode",
-          "title": "Поверенный 2",
-          "input_mode_field": "agent2_mode",
-          "min": 1,
-          "max": 1,
-          "manual_fields": [
-            {
-              "name": "agent2.full_name",
-              "type": "text",
-              "label": "ФИО"
-            },
-            {
-              "name": "agent2.iin",
-              "type": "text",
-              "label": "ИИН"
-            },
-            {
-              "name": "agent2.passport",
-              "type": "text",
-              "label": "Документ личности"
-            },
-            {
-              "name": "agent2.contacts.phone",
-              "type": "text",
-              "label": "Телефон"
-            }
-          ],
-          "next": "payment_types"
         },
         {
           "id": "payment_types",
@@ -17724,55 +16850,35 @@
           "next": "agent_count"
         },
         {
-          "id": "agent_count",
-          "type": "radio",
-          "title": "Количество поверенных",
-          "options": [
-            {
-              "value": "1",
-              "label": "1 поверенный"
-            },
-            {
-              "value": "2",
-              "label": "2 поверенных"
-            }
-          ],
-          "required": true,
-          "next": {
-            "1": "agent1",
-            "2": "agent1"
-          }
-        },
-        {
           "id": "agent1",
           "type": "input-mode",
-          "title": "Поверенный 1",
+          "title": "Поверенный",
           "input_mode_field": "agent1_mode",
           "min": 1,
-          "max": 1,
+          "max": 2,
           "manual_fields": [
             {
-              "name": "agent1.full_name",
+              "name": "agent[].full_name",
               "type": "text",
               "label": "ФИО"
             },
             {
-              "name": "agent1.iin",
+              "name": "agent[].iin",
               "type": "text",
               "label": "ИИН"
             },
             {
-              "name": "agent1.passport",
+              "name": "agent[].passport",
               "type": "text",
               "label": "Документ личности"
             },
             {
-              "name": "agent1.contacts.phone",
+              "name": "agent[].contacts.phone",
               "type": "text",
               "label": "Телефон"
             }
           ],
-          "next": "agent2_cond"
+          "next": "scope"
         },
         {
           "id": "agent2_cond",
@@ -17780,37 +16886,6 @@
           "expression": "agent_count == '2'",
           "next_if_true": "agent2",
           "next_if_false": "scope"
-        },
-        {
-          "id": "agent2",
-          "type": "input-mode",
-          "title": "Поверенный 2",
-          "input_mode_field": "agent2_mode",
-          "min": 1,
-          "max": 1,
-          "manual_fields": [
-            {
-              "name": "agent2.full_name",
-              "type": "text",
-              "label": "ФИО"
-            },
-            {
-              "name": "agent2.iin",
-              "type": "text",
-              "label": "ИИН"
-            },
-            {
-              "name": "agent2.passport",
-              "type": "text",
-              "label": "Документ личности"
-            },
-            {
-              "name": "agent2.contacts.phone",
-              "type": "text",
-              "label": "Телефон"
-            }
-          ],
-          "next": "scope"
         },
         {
           "id": "scope",

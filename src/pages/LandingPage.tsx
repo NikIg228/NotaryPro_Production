@@ -1,37 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Button from '../components/Button'
-import Input from '../components/Input'
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate()
-  const [formData, setFormData] = useState({
-    fullName: '',
-    licenseNumber: '',
-    licenseDate: '',
-    licenseIssuer: '',
-    phone: '',
-    email: '',
-    city: '',
-    password: ''
-  })
   const [videoError, setVideoError] = useState<string | null>(null)
   const [videoAspectRatio, setVideoAspectRatio] = useState<number | null>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const videoContainerRef = useRef<HTMLDivElement>(null)
   const userPausedRef = useRef<boolean>(false) // Отслеживаем, остановил ли пользователь видео вручную
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Здесь будет логика регистрации
-    console.log('Registration data:', formData)
-    // После регистрации можно перенаправить на главную страницу
-    navigate('/')
-  }
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }))
-  }
 
   // Автоматическое воспроизведение видео при достижении половины контейнера
   useEffect(() => {
@@ -95,14 +73,21 @@ const LandingPage: React.FC = () => {
       {/* Блок 1. Главный экран */}
       <section className="bg-gradient-to-b from-gray-50 to-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-8 flex justify-center">
+            <img 
+              src="/logo_transparent.png" 
+              alt="NotaryPro.kz" 
+              className="h-32 w-auto"
+            />
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Профессиональный инструмент для нотариусов, формирующий документы в соответствии с Законом „о Нотариате“ и Методическими рекомендациями РНП.
+          Профессиональный инструмент для нотариусов, формирующий документы в соответствии с Законом „о Нотариате" и Методическими рекомендациями РНП.
           </h1>
           <p className="text-xl text-gray-600 mb-8">
             Автоматизированная подготовка документов с соблюдением всех обязательных требований законодательства и профессиональных стандартов.
           </p>
           <Button 
-            onClick={() => document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => navigate('/auth')}
             className="text-lg px-8 py-4"
           >
             Получить бесплатный доступ на 7 дней
@@ -277,7 +262,7 @@ const LandingPage: React.FC = () => {
               Оплатите только после того, как убедитесь в эффективности инструмента.
             </p>
             <Button 
-              onClick={() => document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => navigate('/auth')}
               className="text-lg px-8 py-4"
             >
               Получить 7-дневный доступ
@@ -405,83 +390,7 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Блок 7. Форма регистрации */}
-      <section id="registration" className="py-16 px-6 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
-            Получите бесплатный доступ на 7 дней
-          </h2>
-          <p className="text-lg text-gray-600 mb-8 text-center">
-            Регистрация занимает менее 1 минуты.
-          </p>
-          <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg space-y-6">
-            <Input
-              type="text"
-              label="ФИО"
-              value={formData.fullName}
-              onChange={(e) => handleInputChange('fullName', e.target.value)}
-              required
-            />
-            <Input
-              type="text"
-              label="№ лицензии"
-              value={formData.licenseNumber}
-              onChange={(e) => handleInputChange('licenseNumber', e.target.value)}
-              required
-            />
-            <Input
-              type="date"
-              label="Дата выдачи лицензии"
-              value={formData.licenseDate}
-              onChange={(e) => handleInputChange('licenseDate', e.target.value)}
-              required
-            />
-            <Input
-              type="text"
-              label="Орган выдавший лицензию"
-              value={formData.licenseIssuer}
-              onChange={(e) => handleInputChange('licenseIssuer', e.target.value)}
-              required
-            />
-            <Input
-              type="tel"
-              label="Телефон"
-              value={formData.phone}
-              onChange={(e) => handleInputChange('phone', e.target.value)}
-              required
-            />
-            <Input
-              type="email"
-              label="Email"
-              value={formData.email}
-              onChange={(e) => handleInputChange('email', e.target.value)}
-              required
-            />
-            <Input
-              type="text"
-              label="Город"
-              value={formData.city}
-              onChange={(e) => handleInputChange('city', e.target.value)}
-              required
-            />
-            <Input
-              type="password"
-              label="Пароль"
-              value={formData.password}
-              onChange={(e) => handleInputChange('password', e.target.value)}
-              required
-            />
-            <Button type="submit" className="w-full text-lg py-4">
-              Создать аккаунт
-            </Button>
-            <p className="text-sm text-gray-500 text-center mt-4">
-              Регистрация бесплатная. Банковские реквизиты не требуются.
-            </p>
-          </form>
-        </div>
-      </section>
-
-      {/* Блок 8. Безопасность */}
+      {/* Блок 7. Безопасность */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
@@ -503,7 +412,7 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Блок 9. FAQ */}
+      {/* Блок 8. FAQ */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
@@ -537,7 +446,7 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Блок 10. Футер */}
+      {/* Блок 9. Футер */}
       <footer className="bg-gray-900 text-white py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8">

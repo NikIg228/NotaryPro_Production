@@ -29,31 +29,31 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="mb-8">
+      <div className="max-w-2xl mx-auto px-6 py-12">
+        <div className="mb-8 text-center">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Категории документов
+            Нотари
           </h1>
           <p className="text-gray-600">
-            Выберите категорию для просмотра документов
+            Выберите категорию документов для создания
           </p>
         </div>
 
         <div className="space-y-4">
-          {categoriesWithCount.map((category) => (
+          {categories.map((category) => (
             <Card 
-              key={category.name}
-              onClick={() => handleCategoryClick(category.name)}
+              key={category}
+              onClick={() => handleCategoryClick(category)}
               hover
               className="cursor-pointer"
             >
               <div className="flex items-center justify-between">
                 <h2 className="text-xl font-semibold text-gray-900">
-                  {category.name}
+                  {category}
                 </h2>
-                <span className="text-gray-500">
-                  {category.count} {category.count === 1 ? 'документ' : 'документов'}
-                </span>
+                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </div>
             </Card>
           ))}

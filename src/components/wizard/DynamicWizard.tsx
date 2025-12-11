@@ -58,6 +58,11 @@ const DynamicWizard: React.FC<DynamicWizardProps> = ({ schema, onSubmit, onCance
     }
   }, [stepErrors])
 
+  // Прокрутка вверх при изменении шага
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [currentStepId])
+
   const handleNext = useCallback(async () => {
     if (!currentStep) return
 

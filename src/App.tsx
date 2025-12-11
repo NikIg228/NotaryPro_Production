@@ -9,6 +9,8 @@ const DocumentPage = lazy(() => import('./pages/DocumentPage'))
 const WizardPage = lazy(() => import('./pages/WizardPage'))
 const LandingPage = lazy(() => import('./pages/LandingPage'))
 const CategoryPage = lazy(() => import('./pages/CategoryPage'))
+const AuthPage = lazy(() => import('./pages/AuthPage'))
+const ProfilePage = lazy(() => import('./pages/ProfilePage'))
 
 function AppContent() {
   const location = useLocation()
@@ -21,6 +23,8 @@ function AppContent() {
       <Suspense fallback={<div className="min-h-screen bg-white flex items-center justify-center">Загрузка...</div>}>
         <Routes>
           <Route path="/landing" element={<LandingPage />} />
+          <Route path="/auth" element={<AuthPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/category" element={<CategoryPage />} />
           <Route path="/document/:id" element={<DocumentPage />} />

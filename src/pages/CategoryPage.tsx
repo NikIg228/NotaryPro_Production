@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import Search from '../components/Search'
-import Button from '../components/Button'
 import { getDocumentsByMainCategory, searchDocuments } from '../utils/dataUtils'
 
 const CategoryPage: React.FC = () => {
@@ -36,13 +35,13 @@ const CategoryPage: React.FC = () => {
     return docs.sort((a, b) => a.title.localeCompare(b.title, 'ru'))
   }, [allDocuments, searchQuery])
 
-  const handleCreateClick = (docId: number) => {
+  const handleDocumentClick = (docId: number) => {
     navigate(`/document/${docId}/wizard`)
   }
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-5xl mx-auto px-6 py-12">
         <button
           onClick={() => navigate('/')}
           className="mb-6 text-gray-600 hover:text-gray-900 transition-colors"
@@ -79,17 +78,15 @@ const CategoryPage: React.FC = () => {
             {filteredDocuments.map((doc) => (
               <div
                 key={doc.id}
-                className="flex items-center justify-between bg-white border border-gray-200 rounded-lg p-4 hover:bg-purple-50 hover:border-purple-300 hover:shadow-md transition-all duration-200 cursor-pointer"
+                onClick={() => handleDocumentClick(doc.id)}
+                className="flex items-center justify-between bg-white border border-gray-200 rounded-lg p-3 hover:bg-gray-50 hover:border-gray-400 hover:shadow-md transition-all duration-200 cursor-pointer"
               >
-                <h3 className="text-lg font-semibold text-gray-900 flex-1">
+                <h3 className="text-lg font-semibold text-gray-900 flex-1 whitespace-nowrap pr-4">
                   {doc.title}
                 </h3>
-                <Button
-                  onClick={() => handleCreateClick(doc.id)}
-                  className="ml-4"
-                >
-                  Создать
-                </Button>
+                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </div>
             ))}
           </div>
